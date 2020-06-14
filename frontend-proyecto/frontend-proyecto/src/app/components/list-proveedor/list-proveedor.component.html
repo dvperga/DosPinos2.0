@@ -1,1 +1,32 @@
-<p>list-proveedor works!</p>
+<div class="loading" *ngIf="!proveedores">
+    Cargando...
+</div>
+<div *ngIf="proveedores">
+    <br>
+    <h3>Listado de nuestros almacenes</h3>
+    <hr>
+</div>
+<div class="row row-cols-1 row-cols-md-3" *ngIf="proveedores">
+    <article *ngFor="let proveedor of proveedores">
+        <div class="col mb-4">
+            <div class="card border-success">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{proveedor.nombre}}</h5>
+                    <hr class="border-success">
+                    <h6 class="card-subtitle text-muted text-center">Datos</h6>
+                    <hr class="border-success">
+                    <p class="card-text">Id de proveedor: {{proveedor.cedula}}</p>
+                    <p class="card-text">Dias de entrega: {{proveedor.diaEntrega}}</p>
+                    <p class="card-text">Direccion: {{proveedor.direccion}}</p>
+                    <p class="card-text">Correo: {{proveedor.correo}}</p>
+                    <p class="card-text">Telefono: {{proveedor.telefono}}</p>
+                    <p class="card-text">Razon social: {{proveedor.razonSocial}}</p>
+                    <div class="card-footer mt-2 text-center">
+                        <a class="btn btn-warning mr-2 " [routerLink]="['/almacen-edit', proveedor.id]">Editar</a>
+                        <a class="btn btn-danger mr-2" (click)="delete(proveedor.id)">Borrar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>

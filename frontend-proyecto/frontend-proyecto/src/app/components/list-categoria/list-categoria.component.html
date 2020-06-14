@@ -1,1 +1,33 @@
-<p>list-categoria works!</p>
+<div class="loading" *ngIf="!categorias">
+    Cargando...
+</div>
+<div *ngIf="categorias">
+    <br>
+    <h3>Listado de nuestros categorias</h3>
+    <hr>
+</div>
+
+<table class="table table-bordered table-striped" *ngIf="categorias">
+    <thead class="table-success">
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">ID</th>
+            <th scope="col">Bloque</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Funciones</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let categoria of categorias">
+        <tr>
+            <td>{{categoria.nombre}}</td>
+            <td>{{categoria.id}}</td>
+            <td>{{categoria.bloque}}</td>
+            <td>{{categoria.descripcion}}</td>
+
+            <div class="text-center mt-1">
+                <a class="btn btn-warning mr-2 " [routerLink]="['/categoria-edit', categoria.id]">Editar</a>
+                <a class="btn btn-danger mr-2" (click)="delete(categoria.id)">Borrar</a>
+            </div>
+        </tr>
+    </tbody>
+</table>

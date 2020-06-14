@@ -17,7 +17,7 @@ import { CompileShallowModuleMetadata } from '@angular/compiler';
     let cabeceras = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('token', token);
     return this._http.post(this.url + 'producto', params, { headers: cabeceras });
   }
-  getPoductos(): Observable<any> {
+  getProductos(): Observable<any> {
     let cabeceras = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     return this._http.get(this.url + 'producto', { headers: cabeceras });
   }

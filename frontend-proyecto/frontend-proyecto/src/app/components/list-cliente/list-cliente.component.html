@@ -1,1 +1,29 @@
-<p>list-cliente works!</p>
+<div class="loading" *ngIf="!clientes">
+    Cargando...
+</div>
+<div *ngIf="clientes">
+    <br>
+    <h3>Listado de nuestros almacenes</h3>
+    <hr>
+</div>
+<div class="row row-cols-1 row-cols-md-3" *ngIf="clientes">
+    <article *ngFor="let cliente of clientes">
+        <div class="col mb-4">
+            <div class="card border-success">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{cliente.nombre}}</h5>
+                    <hr class="border-success">
+                    <h6 class="card-subtitle text-muted text-center">Datos</h6>
+                    <hr class="border-success">
+                    <p class="card-text">Id de cliente: {{cliente.cedula}}</p>
+                    <p class="card-text">Apellidos: {{cliente.apellidos}}</p>
+                    <p class="card-text">Genero: {{cliente.genero}}</p>
+                    <div class="card-footer mt-2 text-center">
+                        <a class="btn btn-warning mr-2 " [routerLink]="['/almacen-edit', cliente.id]">Editar</a>
+                        <a class="btn btn-danger mr-2" (click)="delete(cliente.id)">Borrar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>

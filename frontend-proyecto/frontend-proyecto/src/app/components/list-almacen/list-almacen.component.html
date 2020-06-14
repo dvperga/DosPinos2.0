@@ -1,27 +1,35 @@
 <div class="loading" *ngIf="!almacenes">
     Cargando...
 </div>
-<div class="container-fluid mt-3" *ngIf="almacenes">
+<div *ngIf="almacenes">
+    <br>
     <h3>Listado de nuestros almacenes</h3>
     <hr>
-    <div class="card-columns">
-        <article class="cards w-100" *ngFor="let almacen of almacenes">
-            <div class="card-header mt-2">
-                <h5>
-                    <a [routerLink]="['/inicio']">{{almacen.nombre}}</a>
-                </h5>
-            </div>
-            <div class="card-body">
-                <div class="post-buttons mt-2">
-                    <a class="btn btn-info mr-2" [routerLink]="['/inicio']">Leer</a>
-
-                    <a class="btn btn-warning mr-2 " [routerLink]="['/almacen-edit', almacen.id]">Editar</a>
-                    <a class="btn btn-danger mr-2" (click)="delete(almacen.id)">Borrar</a>
-
-                </div>
-            </div>
-
-        </article>
-
-    </div>
 </div>
+
+<table class="table table-bordered table-striped" *ngIf="almacenes">
+    <thead class="table-success">
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">ID</th>
+            <th scope="col">Encargado</th>
+            <th scope="col">Ubicacion</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Funciones</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let almacen of almacenes">
+        <tr>
+            <td>{{almacen.nombre}}</td>
+            <td>{{almacen.id}}</td>
+            <td>{{almacen.encargado}}</td>
+            <td>{{almacen.ubicacion}}</td>
+            <td>{{almacen.telefono}}</td>
+
+            <div class="text-center mt-1">
+                <a class="btn btn-warning mr-2 " [routerLink]="['/almacen-edit', almacen.id]">Editar</a>
+                <a class="btn btn-danger mr-2" (click)="delete(almacen.id)">Borrar</a>
+            </div>
+        </tr>
+    </tbody>
+</table>

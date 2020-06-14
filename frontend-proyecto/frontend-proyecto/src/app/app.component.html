@@ -11,23 +11,25 @@
     </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active" *ngIf="!identity">
+                <li class="nav-item active" *ngIf="!identity || identity">
                     <a class="nav-link" [routerLink]="['/inicio']">Inicio <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item dropdown" *ngIf="!identity">
+                <li class="nav-item dropdown" *ngIf="identity">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Cliente
             </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" [routerLink]="['/new-cliente']">Cliente nuevo</a>
+                        <a class="dropdown-item" [routerLink]="['/list-cliente']">Nuestros clientes</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown" *ngIf="!identity">
+                <li class="nav-item dropdown" *ngIf="identity">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Proveedor
             </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" [routerLink]="['/new-proveedor']">Proveedor nuevo</a>
+                        <a class="dropdown-item" [routerLink]="['/list-proveedor']">Nuestros proveedores</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown" *ngIf="!identity">
@@ -38,23 +40,25 @@
                         <a class="dropdown-item" [routerLink]="['/new-compra']">Compra nueva</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown" *ngIf="!identity">
+                <li class="nav-item dropdown" *ngIf="identity">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Producto
             </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" [routerLink]="['/new-producto']">Producto nuevo</a>
+                        <a class="dropdown-item" [routerLink]="['/list-producto']">Nuestros productos</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown" *ngIf="!identity">
+                <li class="nav-item dropdown" *ngIf="identity">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Categoria
             </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" [routerLink]="['/new-categoria']">Categorias nueva</a>
+                        <a class="dropdown-item" [routerLink]="['/list-categoria']">Nuestros categorias</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown" *ngIf="!identity">
+                <li class="nav-item dropdown" *ngIf="identity">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Almacen
             </a>
