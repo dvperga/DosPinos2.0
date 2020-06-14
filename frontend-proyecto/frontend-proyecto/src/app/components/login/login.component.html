@@ -1,18 +1,18 @@
 <br/>
-  <div class="card" >
+<div class="card">
     <br/>
     <h1 style="text-align:center;">Login</h1>
-<form  style="justify-content: center; align-items: center;" class="col-md-6 mr-auto ml-auto">
-  <div class="form-group" >
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@gmail.com">
-    <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
-  </div>
-  <div class="form-group ">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <button type="submit" class="btn btn-success" style="background-color: darkgreen;">Inicio</button>
-</form>
-<br/>
-  </div>
+    <form style="justify-content: center; align-items: center;" class="col-md-6 mr-auto ml-auto" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="correo" #correo="ngModel" [(ngModel)]="user.correo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo" placeholder="ejemplo@gmail.com">
+            <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
+        </div>
+        <div class="form-group ">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-success" style="background-color: darkgreen;" [disabled]="loginForm.invalid">Inicio</button>
+    </form>
+    <br/>
+</div>
