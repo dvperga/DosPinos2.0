@@ -1,0 +1,33 @@
+<br/>
+<div class="card">
+    <div class="col-md-12 mt-3">
+        <h1 style="text-align:center;">Ingresar Nuevo Cliente</h1>
+        <h5 style="text-align:center;">Ingrese los datos del nuevo cliente.</h5>
+        <br/>
+        <form class="col-md-6 mr-auto ml-auto" #clienteNewForm="ngForm" (ngSubmit)="onSubmit(clienteNewForm)">
+            <div class="form-group">
+                <label>Cedula</label>
+                <input type="text" name="cedula" class="form-control" required pattern="[0-9]+" placeholder="8-8888-8888">
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" name="nombre" class="form-control" required pattern="[a-zA-Z]+">
+            </div>
+            <div class="form-group">
+                <label>Apellidos</label>
+                <input type="text" name="apellidos" class="form-control" required pattern="[a-zA-Z]+">
+            </div>
+            <div class="form-group">
+                <label>Genero</label>
+                <select name="genero" class="form-control">
+        <option >-seleccione-</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+        </select>
+            </div>
+            <input type="submit" value="Registrarse" class="btn btn-success" [disabled]="clienteNewForm.invalid">
+        </form>
+    </div>
+
+    <br/>
+</div>

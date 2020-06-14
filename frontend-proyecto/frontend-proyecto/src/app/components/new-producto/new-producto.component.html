@@ -1,0 +1,63 @@
+<br/>
+<div class="card">
+    <div class="col-md-12 mt-3">
+        <h1 style="text-align:center;">Ingresar Nuevo Producto</h1>
+        <h5 style="text-align:center;">Ingrese los datos del nuevo producto.</h5>
+        <br/>
+        <form class="col-md-6 mr-auto ml-auto" #productoNewForm="ngForm" (ngSubmit)="onSubmit(productoNewForm)">
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" name="nombre" class="form-control" required pattern="[a-zA-Z]+">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Existencia actual</label>
+                    <input type="text" name="existenciaActual" class="form-control" required pattern="[0-9]+" placeholder="0">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Precio</label>
+                    <input type="text" name="precio" class="form-control" required pattern="[0-9]+" placeholder="0">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Maximo</label>
+                    <input type="text" name="maximo" class="form-control" required pattern="[0-9]+" placeholder="0">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Minimo</label>
+                    <input type="text" name="minimo" class="form-control" required pattern="[0-9]+" placeholder="0">
+                </div>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-md-4">
+                    <label>Categoria</label>
+                    <select name="idCategoria" #category="ngModel" [(ngModel)]="producto.idCategoria" class="form-control">
+            <option *ngFor="let categoria of categorias" value="{{categoria.id}}" >
+            {{categoria.nombre}}
+            </option>
+          </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Provedores</label>
+                    <select name="idProveedor" #category="ngModel" [(ngModel)]="producto.idProveedor" class="form-control">
+          <option *ngFor="let proveedor of proveedores" value="{{proveedor.id}}">
+          {{proveedor.nombre}}
+          </option>
+        </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Almacenes</label>
+                    <select name="idAlmacen" #category="ngModel" [(ngModel)]="producto.idAlmacen" class="form-control">
+          <option *ngFor="let almacen of almacenes" value="{{almacen.id}}">
+          {{almacen.nombre}}
+          </option>
+        </select>
+                </div>
+            </div>
+
+            <input type="submit" value="Registrarse" class="btn btn-success" [disabled]="productoNewForm.invalid">
+            <br>
+            <br>
+        </form>
+    </div>
+</div>

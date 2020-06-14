@@ -1,0 +1,131 @@
+<header>
+    <a href="http://localhost:4200/">
+        <img src="assets/img/dospinos.jpg" alt="..." style="">
+    </a>
+</header>
+<div class="container">
+    <br>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-pill">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active" *ngIf="!identity">
+                    <a class="nav-link" [routerLink]="['/inicio']">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown" *ngIf="!identity">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Cliente
+            </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['/new-cliente']">Cliente nuevo</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" *ngIf="!identity">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Proveedor
+            </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['/new-proveedor']">Proveedor nuevo</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" *ngIf="!identity">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Compra
+            </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['/new-compra']">Compra nueva</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" *ngIf="!identity">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Producto
+            </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['/new-producto']">Producto nuevo</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" *ngIf="!identity">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categoria
+            </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['/new-categoria']">Categorias nueva</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" *ngIf="!identity">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Almacen
+            </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['/new-almacen']">Almacen nuevo</a>
+                        <a class="dropdown-item" [routerLink]="['/list-almacen']">Nuestros almacenes</a>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav navbar-right" *ngIf="!identity">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/login']">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/registro']">Registro</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-right" *ngIf="identity">
+                <li class="m-1">
+                    <img src="" width=30px>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Mi cuenta
+            </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['/error']">Mi perfil</a>
+                        <a class="dropdown-item">Editar Usuario</a>
+                        <a class="dropdown-item">Eliminar Usuario</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item">Cerrar sesión</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <router-outlet>
+    </router-outlet>
+</div>
+<br/>
+
+<footer class="card-group">
+    <div class="card" style="background-color:forestgreen;">
+        <h4 class="card-title">Menu</h4>
+        <div class="card-body" style="background-color:darkgreen;">
+            <p class="card-text">
+                <a href="https://www.cooperativadospinos.com/partners" style="color:orange;">NUESTROS ASOCIADOS</a>
+            </p>
+            <p class="card-text">
+                <a href="https://portaldp.dospinos.com/apex/f?p=100:LOGIN:8702531202116:::::" style="color:orange;">PORTAL DE ASOCIADOS</a>
+            </p>
+            <p class="card-text">
+                <a href="https://sesuite.dospinos.com/softexpert/login" style="color:orange;">PORTAL DE PROVEEDORES</a>
+            </p>
+            <p class="card-text">
+                <a href="https://www.cooperativadospinos.com/promotions" style="color:orange;">PROMOCIONES</a>
+            </p>
+
+            <br/>
+        </div>
+    </div>
+
+    <div class="card" style="background-color:forestgreen;">
+        <h4 class="card-title">Nosotros</h4>
+        <div class="card-body" style="background-color:darkgreen;">
+            <p class="card-text">Somos la Cooperativa de Productores de Leche Dos Pinos, empresa de alimentos 100% costarricense y líder en la industria láctea de Centroamérica y Caribe. Contamos con una amplia oferta de productos de consumo humano que supera las 900 variedades.
+                Adicionalmente, a través de la División Agrocomercial, producimos alimentos balanceados para animales y comercializamos más de 3.000 productos para el sector agropecuario nacional.</p>
+            <div class="container"> Todos los derechos reservados © 2020 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="http://localhost:4200/">Dos Pinos</a>
+            </div>
+        </div>
+    </div>
+</footer>
