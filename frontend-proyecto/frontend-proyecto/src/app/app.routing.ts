@@ -9,6 +9,7 @@ import {RegisterComponent} from './components/register/register.component';
 // almacen
 import { NewAlmacenComponent } from './components/new-almacen/new-almacen.component';
 import { ListAlmacenComponent } from './components/list-almacen/list-almacen.component';
+import { EditAlmacenComponent } from './components/edit-almacen/edit-almacen.component';
 // cliente
 import { NewClienteComponent } from './components/new-cliente/new-cliente.component';
 import { ListClienteComponent } from './components/list-cliente/list-cliente.component';
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
   // almacen
   {path: 'new-almacen', component: NewAlmacenComponent},
   {path: 'list-almacen', component: ListAlmacenComponent},
+  {path: 'edit-almacen/:id', component: EditAlmacenComponent},
   // user
   {path: 'registro', component: RegisterComponent},
   // cliente

@@ -5,5 +5,6 @@ export class Almacen{
       public encargado: string,
       public nombre: string,
       public telefono: number,
+      public created_at:any
   ){}
 }

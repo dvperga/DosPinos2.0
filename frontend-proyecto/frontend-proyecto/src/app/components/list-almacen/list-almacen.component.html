@@ -27,7 +27,7 @@
             <td>{{almacen.telefono}}</td>
 
             <div class="text-center mt-1">
-                <a class="btn btn-warning mr-2 " [routerLink]="['/almacen-edit', almacen.id]">Editar</a>
+                <a class="btn btn-warning mr-2 " [routerLink]="['/edit-almacen', almacen.id]">Editar</a>
                 <a class="btn btn-danger mr-2" (click)="delete(almacen.id)">Borrar</a>
             </div>
         </tr>

@@ -1,10 +1,16 @@
 <br/>
 <div class="card">
     <div class="col-md-12 mt-3">
-        <h1 style="text-align:center;">Ingresar Nuevo Almacen</h1>
-        <h5 style="text-align:center;">Ingrese los datos del nueva almacen.</h5>
+        <h1 style="text-align:center;">Editando el almacen</h1>
+        <h5 style="text-align:center;">Ingrese los datos para actualizar el almacen.</h5>
+        <div class="alert alert-success" *ngIf="status=='success'">
+            El registro se actualizo correctamente!
+        </div>
+        <div class="alert alert-danger" *ngIf="status=='error'">
+            Error al actualizar la información!
+        </div>
         <br/>
-        <form class="col-md-6 mr-auto ml-auto" #almacenNewForm="ngForm" (ngSubmit)="onSubmit(almacenNewForm)">
+        <form class="col-md-6 mr-auto ml-auto" #almacenEditForm="ngForm" (ngSubmit)="onSubmit(almacenEditForm)">
             <div class="form-group">
                 <label>Ubicacion</label>
                 <input type="text" name="ubicacion" #ubicacion="ngModel" [(ngModel)]="almacen.ubicacion" class="form-control" required pattern="[a-zA-Z]+" placeholder="provincia, canton">
@@ -21,7 +27,7 @@
                 <label>Telefono</label>
                 <input type="text" name="telefono" #telefono="ngModel" [(ngModel)]="almacen.telefono" class="form-control" required pattern="[0-9]+" placeholder="8888-8888">
             </div>
-            <input type="submit" value="Ingresar" class="btn btn-success">
+            <input type="submit" value="Editar" class="btn btn-success">
 
         </form>
     </div>

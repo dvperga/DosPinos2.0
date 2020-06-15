@@ -3,6 +3,7 @@ import { UserService } from '../../services/user.service';
 import { AlmacenService } from '../../services/almacen.service';
 import { global } from '../../services/global';
 import { Almacen } from '../../models/almacen';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-almacen',
@@ -18,6 +19,8 @@ export class ListAlmacenComponent implements OnInit {
   public identity;
 
   constructor(
+    private _route:ActivatedRoute,
+    private _router: Router,
     private _almacenService: AlmacenService,
     private _userService: UserService
   ) {
@@ -45,13 +48,13 @@ export class ListAlmacenComponent implements OnInit {
       }
     );
   }
-
   delete(id) {
     if (confirm('¿Esta seguro que desea eliminar este almacen?')) {
       this._almacenService.delete(id, this.token).subscribe(
         response => {
           if (response.status == "success") {
             this.status = response.status;
+            this._router.navigate(['/list-almacen']);
           } else {
             this.status = "error";
           }

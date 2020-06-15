@@ -22,6 +22,7 @@ import { ListProveedorComponent } from './components/list-proveedor/list-proveed
 // almacen
 import { NewAlmacenComponent } from './components/new-almacen/new-almacen.component';
 import { ListAlmacenComponent } from './components/list-almacen/list-almacen.component';
+import { EditAlmacenComponent } from './components/edit-almacen/edit-almacen.component';
 // categoria
 import { NewCategoriaComponent } from './components/new-categoria/new-categoria.component';
 import { ListCategoriaComponent } from './components/list-categoria/list-categoria.component';
@@ -45,7 +46,8 @@ import { ListProductoComponent } from './components/list-producto/list-producto.
     ListProveedorComponent,
     ListAlmacenComponent,
     ListCategoriaComponent,
-    ListProductoComponent
+    ListProductoComponent,
+    EditAlmacenComponent
   ],
   imports: [
     BrowserModule,
