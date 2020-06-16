@@ -16,6 +16,7 @@ import { RegisterComponent } from './components/register/register.component';
 // cliente
 import { NewClienteComponent } from './components/new-cliente/new-cliente.component';
 import { ListClienteComponent } from './components/list-cliente/list-cliente.component';
+import { EditClienteComponent } from './components/edit-cliente/edit-cliente.component';
 // proveedor
 import { NewProveedorComponent } from './components/new-proveedor/new-proveedor.component';
 import { ListProveedorComponent } from './components/list-proveedor/list-proveedor.component';
@@ -29,6 +30,7 @@ import { ListCategoriaComponent } from './components/list-categoria/list-categor
 // producto
 import { NewProductoComponent } from './components/new-producto/new-producto.component';
 import { ListProductoComponent } from './components/list-producto/list-producto.component';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { ListProductoComponent } from './components/list-producto/list-producto.
     ListAlmacenComponent,
     ListCategoriaComponent,
     ListProductoComponent,
-    EditAlmacenComponent
+    EditAlmacenComponent,
+    EditClienteComponent
   ],
   imports: [
     BrowserModule,

@@ -22,14 +22,14 @@ import { CompileShallowModuleMetadata } from '@angular/compiler';
     return this._http.get(this.url + 'cliente', { headers: cabeceras });
   }
   getCliente(id): Observable<any> {
-    let encabezados = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
-    return this._http.get(this.url + 'cliente/' + id, { headers: encabezados });
+    return this._http.get(this.url + 'cliente/' + id);
   }
-  update(token, cliente, id): Observable<any> {
+  update(token, cliente): Observable<any> {
     let json = JSON.stringify(cliente);
     let params = "json=" + json;
+    console.log(params);
     let encabezados = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('token', token);
-    return this._http.put(this.url + 'cliente/' + id, params, { headers: encabezados });
+    return this._http.put(this.url + 'cliente/', params, { headers: encabezados });
   }
   delete(id, token): Observable<any> {
     let encabezados = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('token', token);

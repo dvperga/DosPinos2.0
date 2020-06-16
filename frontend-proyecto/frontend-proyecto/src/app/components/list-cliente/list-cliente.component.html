@@ -19,7 +19,7 @@
                     <p class="card-text">Apellidos: {{cliente.apellidos}}</p>
                     <p class="card-text">Genero: {{cliente.genero}}</p>
                     <div class="card-footer mt-2 text-center">
-                        <a class="btn btn-warning mr-2 " [routerLink]="['/almacen-edit', cliente.id]">Editar</a>
+                        <a class="btn btn-warning mr-2 " [routerLink]="['/edit-cliente',cliente.id]">Editar</a>
                         <a class="btn btn-danger mr-2" (click)="delete(cliente.id)">Borrar</a>
                     </div>
                 </div>

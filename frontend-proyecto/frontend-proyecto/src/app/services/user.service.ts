@@ -59,6 +59,7 @@ import {global} from './global';
       return this.token;
     }
     public loadIdentity() {
+      console.log(this.token);
       let cabecera = new HttpHeaders().set('token', this.token);
       return this.http.get(this.url + 'user/getidentity', { headers: cabecera });
     }

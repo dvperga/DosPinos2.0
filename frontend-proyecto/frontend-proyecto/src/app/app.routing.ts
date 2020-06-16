@@ -13,6 +13,7 @@ import { EditAlmacenComponent } from './components/edit-almacen/edit-almacen.com
 // cliente
 import { NewClienteComponent } from './components/new-cliente/new-cliente.component';
 import { ListClienteComponent } from './components/list-cliente/list-cliente.component';
+import { EditClienteComponent } from './components/edit-cliente/edit-cliente.component';
 // producto
 import { NewProductoComponent } from './components/new-producto/new-producto.component';
 import { ListProductoComponent } from './components/list-producto/list-producto.component';
@@ -36,6 +37,7 @@ const appRoutes: Routes = [
   // cliente
   {path: 'new-cliente', component: NewClienteComponent},
   {path: 'list-cliente', component: ListClienteComponent},
+  {path: 'edit-cliente/:id', component: EditClienteComponent},
   // proveedor
   {path: 'new-proveedor', component: NewProveedorComponent},
   {path: 'list-proveedor', component: ListProveedorComponent},
