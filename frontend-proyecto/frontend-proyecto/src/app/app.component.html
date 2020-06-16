@@ -69,7 +69,7 @@
                 </li>
             </ul>
 
-            <ul class="navbar-nav navbar-right" *ngIf="identity">
+            <ul class="navbar-nav navbar-right" *ngIf="!identity">
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/login']">Login</a>
                 </li>
@@ -79,18 +79,17 @@
             </ul>
             <ul class="navbar-nav navbar-right" *ngIf="identity">
                 <li class="m-1">
-                    <img src="" width=30px>
+                    <img src="assets/img/UserPerfil.png" width="45px" alt="">
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Mi cuenta
-            </a>
+                    {{identity.nombre+' '+identity.apellidos}}
+                  </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" [routerLink]="['/error']">Mi perfil</a>
-                        <a class="dropdown-item">Editar Usuario</a>
-                        <a class="dropdown-item">Eliminar Usuario</a>
+                        <a class="dropdown-item" [routerLink]="['/perfil']">Mi perfil</a>
+                        <a class="dropdown-item" [routerLink]="['/edit-perfil']">Editar mi perfil</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Cerrar sesión</a>
+                        <a class="dropdown-item" [routerLink]="['/logout/1']">Cerrar sesión</a>
                     </div>
                 </li>
             </ul>

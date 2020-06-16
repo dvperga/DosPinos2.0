@@ -31,7 +31,7 @@ import {global} from './global';
         return this.http.post(this.url+'user/login',params,{headers:encabezados});
     }
 
-    update(user, token): Observable<any> {
+    update(user): Observable<any> {
       let json = JSON.stringify(user);
       let params = 'json=' + json;
       let encabezados = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('token', this.token);

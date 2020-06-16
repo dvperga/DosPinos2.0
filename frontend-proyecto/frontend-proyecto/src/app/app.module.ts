@@ -13,6 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 
 // user
 import { RegisterComponent } from './components/register/register.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { EditPerfilComponent } from './components/edit-perfil/edit-perfil.component';
 // cliente
 import { NewClienteComponent } from './components/new-cliente/new-cliente.component';
 import { ListClienteComponent } from './components/list-cliente/list-cliente.component';
@@ -50,7 +52,9 @@ import { ListProductoComponent } from './components/list-producto/list-producto.
     ListCategoriaComponent,
     ListProductoComponent,
     EditAlmacenComponent,
-    EditClienteComponent
+    EditClienteComponent,
+    PerfilComponent,
+    EditPerfilComponent
   ],
   imports: [
     BrowserModule,

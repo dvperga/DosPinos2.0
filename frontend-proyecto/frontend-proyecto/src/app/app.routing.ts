@@ -23,11 +23,17 @@ import { ListProveedorComponent } from './components/list-proveedor/list-proveed
 // categoria
 import { NewCategoriaComponent } from './components/new-categoria/new-categoria.component';
 import { ListCategoriaComponent } from './components/list-categoria/list-categoria.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { EditPerfilComponent } from './components/edit-perfil/edit-perfil.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'inicio', component: HomeComponent},
+  // user
   {path: 'login', component: LoginComponent},
+  {path:'logout/:sure',component:LoginComponent},
+  {path:'perfil', component: PerfilComponent},
+  {path:'edit-perfil',component: EditPerfilComponent },
   // almacen
   {path: 'new-almacen', component: NewAlmacenComponent},
   {path: 'list-almacen', component: ListAlmacenComponent},

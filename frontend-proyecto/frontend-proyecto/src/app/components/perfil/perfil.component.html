@@ -1,0 +1,29 @@
+<div class="loading" *ngIf="!identity">
+    Cargando...
+</div>
+<div *ngIf="identity">
+    <br>
+    <h3>Perfil</h3>
+    <hr>
+</div>
+<div *ngIf="identity">
+
+    <div class="card text-center">
+        <div class="card-header">
+
+            <img src="assets/img/UserPerfil.png" width="300px" alt="">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Mis Datos</h5>
+            <p class="card-text">Nombre: {{identity.nombre}}</p>
+            <p class="card-text">Apellido: {{identity.apellidos}}</p>
+            <p class="card-text">Cedula: {{identity.cedula}}</p>
+            <p class="card-text">Role: {{identity.role}}</p>
+            <p class="card-text">Correo: {{identity.correo}}</p>
+        </div>
+        <div class="card-footer text-muted mt-2 text-center">
+            <a class="btn btn-warning mr-2 " [routerLink]="['/edit-perfil']">Editar Perfil</a>
+            <a class="btn btn-danger mr-2" [routerLink]="['/logout/1']">Cerrar sesion</a>
+        </div>
+    </div>
+</div>
