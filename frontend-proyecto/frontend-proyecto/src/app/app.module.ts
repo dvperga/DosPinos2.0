@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProviders } from './app.routing' ;
+import {AngularFileUploaderModule} from 'angular-file-uploader';
 
 import { AppComponent } from './app.component';
 
@@ -33,6 +34,7 @@ import { ListCategoriaComponent } from './components/list-categoria/list-categor
 import { NewProductoComponent } from './components/new-producto/new-producto.component';
 import { ListProductoComponent } from './components/list-producto/list-producto.component';
 import { NewCompraComponent } from './components/new-compra/new-compra.component';
+import { EditProductoComponent } from './components/edit-producto/edit-producto.component';
 
 
 @NgModule({
@@ -56,13 +58,16 @@ import { NewCompraComponent } from './components/new-compra/new-compra.component
     EditClienteComponent,
     PerfilComponent,
     EditPerfilComponent,
-    NewCompraComponent
+    NewCompraComponent,
+    EditProductoComponent,
+    
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFileUploaderModule
   ],
   providers: [
     appRoutingProviders

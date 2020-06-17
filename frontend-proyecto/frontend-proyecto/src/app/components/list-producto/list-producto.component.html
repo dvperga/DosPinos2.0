@@ -31,10 +31,10 @@
             <td>{{producto.maximo}}</td>
             <td>{{producto.minimo}}</td>
             <td>{{producto.idAlmacen}}</td>
-            <td>{{getProveedor(producto.idProveedor)}}{{proveedor.nombre}}</td>
-            <td>{{getCategoria(producto.idCategoria)}}{{categoria.nombre}}</td>
+            <td>{{producto.idProveedor}}</td>
+            <td>{{producto.idCategoria}}</td>
             <div class="text-center mt-1">
-                <a class="btn btn-warning mr-2 " [routerLink]="['/producto-edit', producto.id]">Editar</a>
+                <a class="btn btn-warning mr-2 ">Editar</a>
                 <a class="btn btn-danger mr-2" (click)="delete(producto.id)">Borrar</a>
             </div>
         </tr>

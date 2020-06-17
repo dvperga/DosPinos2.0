@@ -35,6 +35,7 @@ export class EditClienteComponent implements OnInit {
          response=>{
           if(response.status=='success'){
             let c=response.data;
+            console.log(c);
             this.cliente=new Cliente(c.id,c.cedula,c.nombre,c.apellidos,c.genero);
             console.log(this.cliente);
             this.status='success';

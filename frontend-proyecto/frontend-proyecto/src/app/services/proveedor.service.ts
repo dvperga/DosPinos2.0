@@ -31,7 +31,6 @@ import { Proveedor } from '../models/proveedor';
       return this._http.get(this.url + 'proveedor', { headers: cabeceras });
     }
     getProveedor(id): Observable<any> {
-      let encabezados = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
-      return this._http.get(this.url + 'proveedor/' + id, { headers: encabezados });
+      return this._http.get(this.url + 'proveedor/'+id);
     }
 }

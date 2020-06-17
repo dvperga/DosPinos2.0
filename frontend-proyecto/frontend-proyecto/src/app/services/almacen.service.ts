@@ -22,8 +22,7 @@ import { CompileShallowModuleMetadata } from '@angular/compiler';
     return this._http.get(this.url + 'almacen', { headers: cabeceras });
   }
   getAlmacen(id): Observable<any> {
-    let encabezados = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
-    return this._http.get(this.url + 'almacen/' + id, { headers: encabezados });
+    return this._http.get(this.url + 'almacen/' + id);
   }
   update(token, almacen, id): Observable<any> {
     let json = JSON.stringify(almacen);

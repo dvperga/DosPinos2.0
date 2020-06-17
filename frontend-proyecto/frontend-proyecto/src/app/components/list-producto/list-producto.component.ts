@@ -48,7 +48,6 @@ export class ListProductoComponent implements OnInit {
     this.getProductos();
   }
   getCategoria(id) {
-    this._route.params.subscribe(params => {
       this._categoriaService.getCategoria(id).subscribe(
          response => {
           if (response.status == 'success') {
@@ -62,11 +61,9 @@ export class ListProductoComponent implements OnInit {
           this._router.navigate(['/inicio']);
         }
       );
-    });
   }
 
   getProveedor(id) {
-    this._route.params.subscribe(params => {
       this._proveedorService.getProveedor(id).subscribe(
          response => {
           if (response.status == 'success') {
@@ -80,7 +77,7 @@ export class ListProductoComponent implements OnInit {
           this._router.navigate(['/inicio']);
         }
       );
-    });
+
   }
 
   getAlmacen(id) {
@@ -90,12 +87,12 @@ export class ListProductoComponent implements OnInit {
           if (response.status == 'success') {
             this.categoria = response.data;
           } else {
-            this._router.navigate(['/inicio']);
+            console.log("error");
           }
         },
         error => {
           console.log(error);
-          this._router.navigate(['/inicio']);
+          
         }
       );
     });

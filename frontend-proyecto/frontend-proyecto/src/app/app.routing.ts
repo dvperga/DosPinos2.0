@@ -17,6 +17,7 @@ import { EditClienteComponent } from './components/edit-cliente/edit-cliente.com
 // producto
 import { NewProductoComponent } from './components/new-producto/new-producto.component';
 import { ListProductoComponent } from './components/list-producto/list-producto.component';
+import { EditProductoComponent } from './components/edit-producto/edit-producto.component';
 // proveedor
 import { NewProveedorComponent } from './components/new-proveedor/new-proveedor.component';
 import { ListProveedorComponent } from './components/list-proveedor/list-proveedor.component';
@@ -26,6 +27,7 @@ import { ListCategoriaComponent } from './components/list-categoria/list-categor
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { EditPerfilComponent } from './components/edit-perfil/edit-perfil.component';
 import { NewCompraComponent } from './components/new-compra/new-compra.component';
+
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -51,6 +53,7 @@ const appRoutes: Routes = [
   // producto
   {path: 'new-producto', component: NewProductoComponent},
   {path: 'list-producto', component: ListProductoComponent},
+  {path: 'edit-producto/:id', component: EditProductoComponent},
   // categoria
   {path: 'new-categoria', component: NewCategoriaComponent},
   {path: 'list-categoria', component: ListCategoriaComponent},
