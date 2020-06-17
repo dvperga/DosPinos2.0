@@ -25,6 +25,7 @@ import { NewCategoriaComponent } from './components/new-categoria/new-categoria.
 import { ListCategoriaComponent } from './components/list-categoria/list-categoria.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { EditPerfilComponent } from './components/edit-perfil/edit-perfil.component';
+import { NewCompraComponent } from './components/new-compra/new-compra.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -53,6 +54,8 @@ const appRoutes: Routes = [
   // categoria
   {path: 'new-categoria', component: NewCategoriaComponent},
   {path: 'list-categoria', component: ListCategoriaComponent},
+  // compra
+  {path: 'new-compra',component:NewCompraComponent},
   // error
   { path: '**', component: ErrorComponent }
 ];

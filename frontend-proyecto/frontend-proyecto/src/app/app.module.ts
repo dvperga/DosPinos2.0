@@ -32,6 +32,7 @@ import { ListCategoriaComponent } from './components/list-categoria/list-categor
 // producto
 import { NewProductoComponent } from './components/new-producto/new-producto.component';
 import { ListProductoComponent } from './components/list-producto/list-producto.component';
+import { NewCompraComponent } from './components/new-compra/new-compra.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { ListProductoComponent } from './components/list-producto/list-producto.
     EditAlmacenComponent,
     EditClienteComponent,
     PerfilComponent,
-    EditPerfilComponent
+    EditPerfilComponent,
+    NewCompraComponent
   ],
   imports: [
     BrowserModule,
