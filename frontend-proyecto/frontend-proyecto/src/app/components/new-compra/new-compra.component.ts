@@ -13,29 +13,30 @@ import { DetalleService } from '../../services/detalle.service';
 import { Producto } from '../../models/producto';
 import { Compra } from '../../models/compra';
 import { Detalle } from '../../models/detalle';
+import { ClienteService } from '../../services/cliente.service';
 
 @Component({
   selector: 'app-new-compra',
   templateUrl: './new-compra.component.html',
   styleUrls: ['./new-compra.component.css'],
-  providers: [ProductoService,UserService,CompraService,DetalleService]
+  providers: [ProductoService,UserService,CompraService,DetalleService, ClienteService]
 })
 export class NewCompraComponent implements OnInit {
   public compra;
   public detalles: Array<Detalle>;
+  public clientes;
+
   public url;
   public token;
   public status;
   public identity;
-  public categoria;
-  public proveedor;
-  public almacen;
 
   constructor(
     private _route: ActivatedRoute,
     private _detalleService: DetalleService,
     private _userService: UserService,
     private _compraService: CompraService,
+    private _clienteService: ClienteService,
     private _router: Router
   ) {
     this.url = global.url;
@@ -44,10 +45,25 @@ export class NewCompraComponent implements OnInit {
     this.compra=new Compra(1,1,1,1,null);
   }
   ngOnInit(): void {
+    this.getClientes();
   }
+
   ngDoCheck(): void {
     this.identity = this._userService.getIdentity();
     this.getDetalles();
+  }
+
+  getClientes(){
+    this._clienteService.getClientes().subscribe(
+      response=>{
+        if(response.status=='success'){
+          this.clientes=response.data;
+        }
+      },
+      error=>{
+        console.error(error);
+      }
+    );
   }
 
   getDetalles() {

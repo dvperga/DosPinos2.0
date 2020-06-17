@@ -16,7 +16,11 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label>Cliente</label>
-                    <input type="text" name="precio" #precio="ngModel" [(ngModel)]="compra.idCliente" class="form-control" required pattern="[0-9]+" placeholder="0">
+                    <select name="idCategoria" #idCliente="ngModel" [(ngModel)]="compra.idCliente" class="form-control">
+              <option *ngFor="let cliente of clientes" value="{{cliente.id}}" >
+              {{cliente.nombre}}
+              </option>
+            </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Total</label>
