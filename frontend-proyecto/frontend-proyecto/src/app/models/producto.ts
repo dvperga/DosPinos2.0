@@ -27,6 +27,8 @@ export class ProductoShow{
       public idProveedor: number,
       public imagen: string,
       public created_at: any,
-      public proveedor:Array<any>
+      public proveedor:Array<any>,
+      public categoria:Array<any>,
+      public almacen:Array<any>
   ){}
 }

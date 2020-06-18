@@ -30,9 +30,9 @@
             <td>{{producto.existenciaActual}}</td>
             <td>{{producto.maximo}}</td>
             <td>{{producto.minimo}}</td>
-            <td>{{producto.idAlmacen}}</td>
+            <td>{{producto.almacen["nombre"]}}</td>
             <td>{{producto.proveedor["nombre"]}}</td>
-            <td></td>
+            <td>{{producto.categoria["nombre"]}}</td>
             <div class="text-center mt-1">
                 <a class="btn btn-warning mr-2 ">Editar</a>
                 <a class="btn btn-danger mr-2" (click)="delete(producto.id)">Borrar</a>
