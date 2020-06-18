@@ -22,6 +22,7 @@ import { EditClienteComponent } from './components/edit-cliente/edit-cliente.com
 // proveedor
 import { NewProveedorComponent } from './components/new-proveedor/new-proveedor.component';
 import { ListProveedorComponent } from './components/list-proveedor/list-proveedor.component';
+import { EditProveedorComponent } from './components/edit-proveedor/edit-proveedor.component';
 // almacen
 import { NewAlmacenComponent } from './components/new-almacen/new-almacen.component';
 import { ListAlmacenComponent } from './components/list-almacen/list-almacen.component';
@@ -29,6 +30,7 @@ import { EditAlmacenComponent } from './components/edit-almacen/edit-almacen.com
 // categoria
 import { NewCategoriaComponent } from './components/new-categoria/new-categoria.component';
 import { ListCategoriaComponent } from './components/list-categoria/list-categoria.component';
+import { EditCategoriaComponent } from './components/edit-categoria/edit-categoria.component';
 // producto
 import { NewProductoComponent } from './components/new-producto/new-producto.component';
 import { ListProductoComponent } from './components/list-producto/list-producto.component';
@@ -36,6 +38,8 @@ import { NewCompraComponent } from './components/new-compra/new-compra.component
 import { EditProductoComponent } from './components/edit-producto/edit-producto.component';
 import { AngularFileUploaderModule } from 'angular-file-uploader';
 import { ListCompraComponent } from './components/list-compra/list-compra.component';
+
+
 
 
 @NgModule({
@@ -62,6 +66,9 @@ import { ListCompraComponent } from './components/list-compra/list-compra.compon
     NewCompraComponent,
     EditProductoComponent,
     ListCompraComponent,
+    EditProveedorComponent,
+    EditCategoriaComponent
+
 
   ],
   imports: [

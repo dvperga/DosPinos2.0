@@ -14,12 +14,10 @@ import { global } from '../../services/global';
 })
 export class EditAlmacenComponent implements OnInit {
   public status;
-  public is_edit: boolean;
-  public url: string;
   public identity;
   public token;
-  public page_title: string;
   public almacen: Almacen;
+  public resetVar=false;
 
   constructor(
     private _route: ActivatedRoute,
@@ -27,43 +25,47 @@ export class EditAlmacenComponent implements OnInit {
     private _userService: UserService,
     private _almacenService: AlmacenService
   ) {
-    this.page_title = 'Editar entrada';
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
-    this.is_edit = true;
-    this.url = global.url;
   }
 
   ngOnInit() {
-    this.almacen = new Almacen(1,'', '', '', 1,null);
+    this.resetVar=false;
     this.getAlmacen();
   }
 
   getAlmacen() {
     this._route.params.subscribe(params => {
-      let id = + params['id'];
+      let id =params['id'];
       this._almacenService.getAlmacen(id).subscribe(
          response => {
           if (response.status == 'success') {
-            this.almacen = response.data;
+            let a = response.data;
+            console.log(a);
+            this.almacen=new Almacen(a.id,a.ubicacion,a.encargado,a.nombre,a.telefono,a.created_at);
+            console.log(this.almacen);
+            this.status='false';
           } else {
-            this._router.navigate(['/inicio']);
+            this._router.navigate(['/list-almacen']);
           }
         },
         error => {
+          this.status='error';
           console.log(error);
-          this._router.navigate(['/inicio']);
+          this._router.navigate(['/list-almacen']);
         }
       );
     });
   }
   onSubmit(form){
     console.log(this.token);
-    this._almacenService.update(this.token, this.almacen, this.almacen.id).subscribe(
+    this._almacenService.update(this.token, this.almacen).subscribe(
       response=>{
         if(response.status=="success"){
           this.status=response.status;
           form.reset();
+          this.resetVar=true;
+          this._router.navigate(['/list-almacen']);
         }else{
           this.status="error";
         }

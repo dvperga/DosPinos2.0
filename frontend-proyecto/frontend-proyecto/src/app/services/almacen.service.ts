@@ -24,11 +24,11 @@ import { CompileShallowModuleMetadata } from '@angular/compiler';
   getAlmacen(id): Observable<any> {
     return this._http.get(this.url + 'almacen/' + id);
   }
-  update(token, almacen, id): Observable<any> {
+  update(token, almacen): Observable<any> {
     let json = JSON.stringify(almacen);
     let params = "json=" + json;
     let encabezados = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('token', token);
-    return this._http.put(this.url + 'almacen/' + id, params, { headers: encabezados });
+    return this._http.put(this.url + 'almacen/1', params, { headers: encabezados });
   }
   delete(id, token): Observable<any> {
     let encabezados = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('token', token);

@@ -1,5 +1,5 @@
 export var global={
-  url:"http://127.0.0.1:8000/api/"
+  url:"http://localhost/DosPinos/proyectoProgra2.0/public/api/"
 
 
   //url:"http://localhost:8000/api/"

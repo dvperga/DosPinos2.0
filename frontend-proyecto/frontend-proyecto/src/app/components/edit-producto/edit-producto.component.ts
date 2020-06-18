@@ -72,6 +72,7 @@ export class EditProductoComponent implements OnInit {
           response=>{
             if(response.status=='success'){
               let p=response.data;
+              console.log(p);
               this.producto=new Producto(
                 p.id,
                 p.nombre,
@@ -146,6 +147,9 @@ export class EditProductoComponent implements OnInit {
   ngOnInit(): void {
     this.resetVar=false;
     this.getProducto();
+    this.getCategorias();
+    this.getAlmacenes();
+    this.getProveedores();
   }
 
   onSubmit(form){

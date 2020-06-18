@@ -21,13 +21,18 @@ import { EditProductoComponent } from './components/edit-producto/edit-producto.
 // proveedor
 import { NewProveedorComponent } from './components/new-proveedor/new-proveedor.component';
 import { ListProveedorComponent } from './components/list-proveedor/list-proveedor.component';
+import { EditProveedorComponent } from './components/edit-proveedor/edit-proveedor.component';
 // categoria
 import { NewCategoriaComponent } from './components/new-categoria/new-categoria.component';
 import { ListCategoriaComponent } from './components/list-categoria/list-categoria.component';
+import { EditCategoriaComponent } from './components/edit-categoria/edit-categoria.component';
+
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { EditPerfilComponent } from './components/edit-perfil/edit-perfil.component';
 import { NewCompraComponent } from './components/new-compra/new-compra.component';
 import { ListCompraComponent } from './components/list-compra/list-compra.component';
+
+
 
 
 const appRoutes: Routes = [
@@ -51,6 +56,7 @@ const appRoutes: Routes = [
   // proveedor
   {path: 'new-proveedor', component: NewProveedorComponent},
   {path: 'list-proveedor', component: ListProveedorComponent},
+  {path: 'edit-proveedor/:id', component: EditProveedorComponent},
   // producto
   {path: 'new-producto', component: NewProductoComponent},
   {path: 'list-producto', component: ListProductoComponent},
@@ -58,6 +64,7 @@ const appRoutes: Routes = [
   // categoria
   {path: 'new-categoria', component: NewCategoriaComponent},
   {path: 'list-categoria', component: ListCategoriaComponent},
+  {path: 'edit-categoria/:id', component: EditCategoriaComponent},
   // compra
   {path: 'new-compra',component:NewCompraComponent},
   {path: 'list-compra', component: ListCompraComponent},

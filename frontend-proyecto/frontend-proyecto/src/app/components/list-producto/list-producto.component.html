@@ -34,7 +34,7 @@
             <td>{{producto.proveedor["nombre"]}}</td>
             <td>{{producto.categoria["nombre"]}}</td>
             <div class="text-center mt-1">
-                <a class="btn btn-warning mr-2 ">Editar</a>
+                <a class="btn btn-warning mr-2" [routerLink]="['/edit-producto', producto.id]">Editar</a>
                 <a class="btn btn-danger mr-2" (click)="delete(producto.id)">Borrar</a>
             </div>
         </tr>

@@ -1,0 +1,56 @@
+<br/>
+<div class="card">
+    <div class="col-md-12 mt-3">
+        <h1 style="text-align:center;">Editar Proveedor</h1>
+        <h5 style="text-align:center;">Ingrese los nuevos datos del proveedor.</h5>
+        <br/>
+        <form class="col-md-6 mr-auto ml-auto" #proveedorEditForm="ngForm" (ngSubmit)="onSubmit(proveedorEditForm)">
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Cedula</label>
+                    <input type="text" name="cedula" #cedula="ngModel" [(ngModel)]="proveedor.cedula" class="form-control" required pattern="[0-9]+" placeholder="8-8888-8888">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Nombre</label>
+                    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="proveedor.nombre" class="form-control" required pattern="[a-zA-Z]+">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Dia de entrega </label>
+                    <select name="diaEntrega" class="form-control" #diaEntrega="ngModel" [(ngModel)]="proveedor.diaEntrega">
+        <option value="">-seleccione-</option>
+        <option value="lunes">Lunes</option>
+        <option value="martes">Martes</option>
+        <option value="miercoles">Miercoles</option>
+        <option value="jueves">Jueves</option>
+        <option value="viernes">Viernes</option>
+        </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label>Razon Social</label>
+                    <input type="text" name="razonSocial" #razonSocial="ngModel" [(ngModel)]="proveedor.razonSocial" class="form-control" required pattern="[a-zA-Z]+">
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Direccion</label>
+                    <input type="text" name="direccion" #direccion="ngModel" [(ngModel)]="proveedor.direccion" class="form-control" required pattern="[a-zA-Z]+,." placeholder="provincia, canton">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label>correo</label>
+                    <input type="email" name="correo" #correo="ngModel" [(ngModel)]="proveedor.correo" class="form-control" required pattern="[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}" placeholder="ejemplo@gmail.com">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label>Telefono</label>
+                    <input type="text" name="telefono" #telefono="ngModel" [(ngModel)]="proveedor.telefono" class="form-control" required pattern="[0-9]+" placeholder="8888-8888">
+                </div>
+
+            </div>
+            <input type="submit" value="Editar" class="btn btn-success">
+        </form>
+    </div>
+
+    <br/>
+</div>
+

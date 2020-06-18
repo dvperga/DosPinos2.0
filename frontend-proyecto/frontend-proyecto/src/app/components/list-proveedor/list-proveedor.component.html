@@ -22,7 +22,7 @@
                     <p class="card-text">Telefono: {{proveedor.telefono}}</p>
                     <p class="card-text">Razon social: {{proveedor.razonSocial}}</p>
                     <div class="card-footer mt-2 text-center">
-                        <a class="btn btn-warning mr-2 " [routerLink]="['/almacen-edit', proveedor.id]">Editar</a>
+                        <a class="btn btn-warning mr-2 " [routerLink]="['/edit-proveedor', proveedor.id]">Editar</a>
                         <a class="btn btn-danger mr-2" (click)="delete(proveedor.id)">Borrar</a>
                     </div>
                 </div>

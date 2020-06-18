@@ -16,11 +16,11 @@ import { Proveedor } from '../models/proveedor';
       let encabezados = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded').set('token', token);
       return this._http.post(this.url+'proveedor',params,{headers:encabezados});
     }
-    update(token,proveedor, id): Observable<any> {
+    update(token,proveedor): Observable<any> {
       let json = JSON.stringify(proveedor);
       let params = "json=" + json;
       let encabezados = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('token', token);
-      return this._http.put(this.url + 'proveedor/' + id, params, { headers: encabezados });
+      return this._http.put(this.url + 'proveedor/1', params, { headers: encabezados });
     }
     delete(id, token): Observable<any> {
       let encabezados = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('token', token);

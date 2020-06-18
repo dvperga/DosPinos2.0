@@ -24,7 +24,7 @@ import { CompileShallowModuleMetadata } from '@angular/compiler';
   getCategoria(id): Observable<any> {
     return this._http.get(this.url + 'categoria/' + id);
   }
-  update(token, categoria, id): Observable<any> {
+  update(token, categoria): Observable<any> {
     let json = JSON.stringify(categoria);
     let params = "json=" + json;
     let encabezados = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('token', token);
