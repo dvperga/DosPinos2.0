@@ -3,10 +3,10 @@
 
 
     <div class="alert alert-success" *ngIf="status=='success'">
-        El registro se almacenó correctamente!
+        El registro se actualizo correctamente!
     </div>
     <div class="alert alert-danger" *ngIf="status=='error'">
-        Error al almacenar la información!
+        Error al actualizar la información!
     </div>
 
     <form class="col-md-8 mr-auto ml-auto" #userEditForm="ngForm" (ngSubmit)="onSubmit(userEditForm)">
