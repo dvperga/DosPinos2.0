@@ -74,7 +74,7 @@ export class NewProductoComponent implements OnInit {
     private _productoService: ProductoService)
     {
       this.token=this._userService.getToken();
-      this.producto=new Producto(1,'',1,1,1,'',1,1,1,null,null);
+      //this.producto=new Producto(1,'',1,1,1,'',1,1,1,null,null);
     }
 
   ngOnInit(): void {

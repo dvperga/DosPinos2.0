@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../../services/producto.service';
 import { UserService } from '../../services/user.service';
-import { Producto } from '../../models/producto';
+import { Producto,ProductoShow } from '../../models/producto';
 import { global } from '../../services/global';
 import { CategoriaService } from '../../services/categoria.service';
 import { Categoria } from '../../models/categoria';
@@ -17,7 +17,7 @@ import { Almacen } from '../../models/almacen';
   providers: [ProductoService,UserService,CategoriaService,AlmacenService, ProveedorService]
 })
 export class ListProductoComponent implements OnInit {
-  public productos: Array<Producto>;
+  public productos: Array<ProductoShow>;
   public url;
   public token;
   public status;
@@ -50,7 +50,7 @@ export class ListProductoComponent implements OnInit {
   getCategoria(id) {
       this._categoriaService.getCategoria(id).subscribe(
          response => {
-          if (response.status == 'success') {
+          if (response.status == "success") {
             this.categoria = response.data;
           } else {
             this._router.navigate(['/inicio']);
@@ -58,7 +58,7 @@ export class ListProductoComponent implements OnInit {
         },
         error => {
           console.log(error);
-          this._router.navigate(['/inicio']);
+
         }
       );
   }
@@ -66,15 +66,15 @@ export class ListProductoComponent implements OnInit {
   getProveedor(id) {
       this._proveedorService.getProveedor(id).subscribe(
          response => {
-          if (response.status == 'success') {
+          if (response.status == "success") {
             this.proveedor = response.data;
+            return true;
           } else {
             this._router.navigate(['/inicio']);
           }
         },
         error => {
           console.log(error);
-          this._router.navigate(['/inicio']);
         }
       );
 
@@ -84,7 +84,7 @@ export class ListProductoComponent implements OnInit {
     this._route.params.subscribe(params => {
       this._almacenService.getAlmacen(id).subscribe(
          response => {
-          if (response.status == 'success') {
+          if (response.status == "success") {
             this.categoria = response.data;
           } else {
             console.log("error");
