@@ -30,6 +30,7 @@ export class NewCompraComponent implements OnInit {
 
   public creado:boolean;
   public IdentityCompra:number;
+  public totalDetalle:number;
 
   public url;
   public token;
@@ -51,7 +52,7 @@ export class NewCompraComponent implements OnInit {
     this.token = this._userService.getToken();
     this.identity = this._userService.getIdentity();
     this.compra=new Compra(1,this.identity.sub,1,1,null);
-    this.detalle=new Detalle(1,1,1,1);
+    this.detalle=new Detalle(1,1,1,1,1);
   }
   ngOnInit(): void {
     this.getClientes();
@@ -119,8 +120,10 @@ export class NewCompraComponent implements OnInit {
     );
   }
 
-  crearDetalle(formD){
-    this.detalle=new Detalle(1,1,this.IdentityCompra,1);
+  crearDetalle(form ){
+    console.log(form);
+    this.detalle.idCompra=this.IdentityCompra;
+    console.log(this.detalle);
     this._detalleService.create(this.detalle,this.token).subscribe(
       response=>{
         if(response.status=="success"){
@@ -135,6 +138,7 @@ export class NewCompraComponent implements OnInit {
       }
     );
     this.ngOnInit();
+    this.totalDetalle=0;
   }
 
   delete(id) {

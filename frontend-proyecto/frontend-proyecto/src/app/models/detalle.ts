@@ -3,6 +3,7 @@ export class Detalle{
       public id: number,
       public idProducto: number,
       public idCompra: number,
-      public cantidad: number
+      public cantidad: number,
+      public precioDetalle: number,
   ){}
 }

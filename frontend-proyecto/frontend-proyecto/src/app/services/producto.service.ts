@@ -29,7 +29,7 @@ import { CompileShallowModuleMetadata } from '@angular/compiler';
     let json = JSON.stringify(producto);
     let params = "json=" + json;
     let encabezados = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('token', token);
-    return this._http.put(this.url + 'producto/1', params, { headers: encabezados });
+    return this._http.put(this.url + 'producto/'+producto.id, params, { headers: encabezados });
   }
   delete(id, token): Observable<any> {
     let encabezados = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('token', token);

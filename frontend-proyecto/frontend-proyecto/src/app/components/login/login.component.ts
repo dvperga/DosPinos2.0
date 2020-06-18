@@ -46,10 +46,9 @@ export class LoginComponent implements OnInit {
             }
 
           );
-          //console.log(this.token);
+          console.log(this.token);
           form.reset();
           this._router.navigate(['inicio']);
-
         }
         else{
           this.status="error";

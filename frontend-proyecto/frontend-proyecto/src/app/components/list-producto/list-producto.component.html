@@ -24,7 +24,7 @@
     </thead>
     <tbody *ngFor="let producto of productos">
         <tr>
-            <td>{{producto.imagen}}</td>
+            <td><img src="{{url+'producto/getImagen/'+producto.imagen}}" alt=""></td>
             <td>{{producto.nombre}}</td>
             <td>{{producto.id}}</td>
             <td>{{producto.existenciaActual}}</td>

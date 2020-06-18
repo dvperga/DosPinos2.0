@@ -13,7 +13,6 @@ import { CompileShallowModuleMetadata } from '@angular/compiler';
     let json = JSON.stringify(detalle);
     let params = 'json=' + json;
     console.log(params);
-    console.log(this.url);
     let cabeceras = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('token', token);
     return this._http.post(this.url + 'detalle', params, { headers: cabeceras });
   }
