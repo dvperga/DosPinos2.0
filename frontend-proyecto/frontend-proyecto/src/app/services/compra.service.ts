@@ -13,15 +13,14 @@ import { CompileShallowModuleMetadata } from '@angular/compiler';
     let json = JSON.stringify(post);
     let params = 'json=' + json;
     console.log(params);
-    console.log(this.url);
     let cabeceras = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('token', token);
     return this._http.post(this.url + 'compra', params, { headers: cabeceras });
   }
-  getCategorias(): Observable<any> {
+  getCompras(): Observable<any> {
     let cabeceras = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     return this._http.get(this.url + 'compra', { headers: cabeceras });
   }
-  getCategoria(id): Observable<any> {
+  getCompra(id): Observable<any> {
     let encabezados = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     return this._http.get(this.url + 'compra/' + id, { headers: encabezados });
   }

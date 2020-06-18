@@ -7,3 +7,6 @@ export class Cliente{
       public genero: string
   ){}
 }
+
+
+

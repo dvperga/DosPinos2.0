@@ -57,11 +57,7 @@
 
             <div class="form-group">
                 <label> Imagen </label>
-                <angular-file-uploader
-                    [config]="afuConfig"
-                    [resetUpload]=resetVar
-                    (ApiResponse)="imageUpload($event)"
-                ></angular-file-uploader>
+                <angular-file-uploader [config]="afuConfig" [resetUpload]=resetVar (ApiResponse)="imageUpload($event)"></angular-file-uploader>
             </div>
 
             <input type="submit" value="Ingresar" class="btn btn-success">

@@ -24,11 +24,18 @@ import { ClienteService } from '../../services/cliente.service';
 export class NewCompraComponent implements OnInit {
   public compra;
   public detalles: Array<Detalle>;
+  public detalle;
   public clientes;
+  public productos;
+
+  public creado:boolean;
+  public IdentityCompra:number;
 
   public url;
   public token;
+
   public status;
+  public statusDetalle:string;
   public identity;
 
   constructor(
@@ -37,20 +44,22 @@ export class NewCompraComponent implements OnInit {
     private _userService: UserService,
     private _compraService: CompraService,
     private _clienteService: ClienteService,
+    private _productoService: ProductoService,
     private _router: Router
   ) {
     this.url = global.url;
     this.token = this._userService.getToken();
     this.identity = this._userService.getIdentity();
-    this.compra=new Compra(1,1,1,1,null);
+    this.compra=new Compra(1,this.identity.sub,1,1,null);
+    this.detalle=new Detalle(1,1,1,1);
   }
   ngOnInit(): void {
     this.getClientes();
+    this.getDetalles();
+    this.getProductos();
   }
-
   ngDoCheck(): void {
     this.identity = this._userService.getIdentity();
-    this.getDetalles();
   }
 
   getClientes(){
@@ -58,6 +67,18 @@ export class NewCompraComponent implements OnInit {
       response=>{
         if(response.status=='success'){
           this.clientes=response.data;
+        }
+      },
+      error=>{
+        console.error(error);
+      }
+    );
+  }
+  getProductos(){
+    this._productoService.getProductos().subscribe(
+      response=>{
+        if(response.status=='success'){
+          this.productos=response.data;
         }
       },
       error=>{
@@ -79,13 +100,14 @@ export class NewCompraComponent implements OnInit {
       }
     );
   }
-
   onSubmit(form){
     this._compraService.create(this.compra,this.token).subscribe(
       response=>{
         if(response.status=="success"){
           this.status=response.status;
-          form.reset();
+          console.log(response.identityCompra);
+          this.creado=true;
+          this.IdentityCompra=response.identityCompra;
         }else{
           this.status="error";
         }
@@ -97,18 +119,37 @@ export class NewCompraComponent implements OnInit {
     );
   }
 
+  crearDetalle(formD){
+    this.detalle=new Detalle(1,1,this.IdentityCompra,1);
+    this._detalleService.create(this.detalle,this.token).subscribe(
+      response=>{
+        if(response.status=="success"){
+          this.statusDetalle="success";
+        }else{
+          this.statusDetalle="error";
+        }
+      },
+      error=>{
+        this.status="error";
+        console.log(error);
+      }
+    );
+    this.ngOnInit();
+  }
+
   delete(id) {
     if (confirm('¿Esta seguro que desea eliminar este detalle?')) {
       this._detalleService.delete(id, this.token).subscribe(
         response => {
           if (response.status == "success") {
-            this.status = response.status;
+            this.status= response.status;
+            console.log(response);
           } else {
             this.status = "error";
           }
         },
         error => {
-          this.status = "error";
+          this.statusDetalle = "error";
           console.log(error);
         }
       );

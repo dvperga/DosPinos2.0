@@ -2,7 +2,7 @@ export class Detalle{
   constructor(
       public id: number,
       public idProducto: number,
-      public IdCompra: number,
+      public idCompra: number,
       public cantidad: number
   ){}
 }

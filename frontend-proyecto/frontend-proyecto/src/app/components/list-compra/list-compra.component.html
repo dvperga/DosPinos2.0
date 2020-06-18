@@ -1,0 +1,39 @@
+<div class="loading" *ngIf="!compras">
+    Cargando...
+</div>
+<div *ngIf="compras">
+    <br>
+    <h3>Historial de compras</h3>
+    <hr>
+</div>
+
+<table class="table table-bordered table-striped" *ngIf="compras">
+    <thead class="table-success">
+        <tr>
+            <th scope="col">Id de compra</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Total</th>
+            <th scope="col">Detalles</th>
+            <th scope="col">Funciones</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let compra of compras">
+        <tr>
+            <td>{{compra.id}}</td>
+            <td>{{compra.idUsuario}}</td>
+            <td>{{compra.idCliente}}</td>
+            <td>{{compra.total}}</td>
+            <td>
+                <div class="text-center mt-1">
+                    <a class="btn btn-warning mr-2" [routerLink]="['/list-cliente',compra.id]">Ver</a>
+                </div>
+            </td>
+            <td>
+                <div class="text-center mt-1">
+                    <a class="btn btn-danger mr-2" (click)="delete(compra.id)">Borrar</a>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
