@@ -12,22 +12,13 @@ import {global} from '../../services/global';
   ]
 })
 export class EditPerfilComponent implements OnInit {
-title='User-edit';
+
   public user:User;
   public identity;
   public token;
   public status;
   public urlImg;
   public resetVar=false;
-
-
-  public options: Object = {
-    charCounterCount: true,
-    toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat','alert'],
-    toolbarButtonsXS: ['bold', 'italic', 'underline', 'paragraphFormat','alert'],
-    toolbarButtonsSM: ['bold', 'italic', 'underline', 'paragraphFormat','alert'],
-    toolbarButtonsMD: ['bold', 'italic', 'underline', 'paragraphFormat','alert'],
-  };
 
   afuConfig = {
     multiple: false,

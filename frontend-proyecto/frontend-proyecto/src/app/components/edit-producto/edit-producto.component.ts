@@ -25,6 +25,7 @@ export class EditProductoComponent implements OnInit {
   public token;
   public status:string;
   public producto;
+  public url;
 
   constructor(
     private _router: Router,
@@ -36,6 +37,7 @@ export class EditProductoComponent implements OnInit {
     private _productoService: ProductoService
   ) { 
     this.token=this._userService.getToken();
+    this.url=global.url;
   }
 
   afuConfig = {
