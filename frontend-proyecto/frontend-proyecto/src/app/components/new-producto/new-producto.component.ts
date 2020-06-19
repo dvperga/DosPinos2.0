@@ -123,10 +123,12 @@ export class NewProductoComponent implements OnInit {
 
   imageUpload(datos){
     let data = JSON.parse(datos.response);
-    this.producto.imagen=data.image;
+    this.producto.imagen=data.imagen;
+    console.log(this.producto.imagen);
   }
 
   onSubmit(form){
+    console.log(form);
     this._productoService.create(this.producto,this.token).subscribe(
       response=>{
         if(response.status=="success"){

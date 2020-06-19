@@ -22,7 +22,7 @@ export class EditProveedorComponent implements OnInit {
     private _router: Router,
     private _userService:UserService,
     private _proveedorService:ProveedorService
-  ) { 
+  ) {
     this.token=this._userService.getToken();
   }
 

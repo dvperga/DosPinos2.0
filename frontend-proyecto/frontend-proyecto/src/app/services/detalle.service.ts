@@ -12,7 +12,7 @@ import { CompileShallowModuleMetadata } from '@angular/compiler';
   create(detalle, token): Observable<any> {
     let json = JSON.stringify(detalle);
     let params = 'json=' + json;
-    console.log(params);
+    console.log(detalle);
     let cabeceras = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('token', token);
     return this._http.post(this.url + 'detalle', params, { headers: cabeceras });
   }

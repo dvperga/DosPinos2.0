@@ -61,6 +61,7 @@ export class NewCompraComponent implements OnInit {
   }
   ngDoCheck(): void {
     this.identity = this._userService.getIdentity();
+    this.getDetalles();
   }
 
   getClientes(){
@@ -123,7 +124,6 @@ export class NewCompraComponent implements OnInit {
   crearDetalle(form ){
     console.log(form);
     this.detalle.idCompra=this.IdentityCompra;
-    console.log(this.detalle);
     this._detalleService.create(this.detalle,this.token).subscribe(
       response=>{
         if(response.status=="success"){
@@ -137,8 +137,7 @@ export class NewCompraComponent implements OnInit {
         console.log(error);
       }
     );
-    this.ngOnInit();
-    this.totalDetalle=0;
+    //this.statusDetalle=false;
   }
 
   delete(id) {

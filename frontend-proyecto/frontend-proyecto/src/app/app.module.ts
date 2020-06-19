@@ -38,8 +38,7 @@ import { NewCompraComponent } from './components/new-compra/new-compra.component
 import { EditProductoComponent } from './components/edit-producto/edit-producto.component';
 import { AngularFileUploaderModule } from 'angular-file-uploader';
 import { ListCompraComponent } from './components/list-compra/list-compra.component';
-
-
+import { ListCompraDetalleComponent } from './components/list-compra-detalle/list-compra-detalle.component';
 
 
 @NgModule({
@@ -67,9 +66,8 @@ import { ListCompraComponent } from './components/list-compra/list-compra.compon
     EditProductoComponent,
     ListCompraComponent,
     EditProveedorComponent,
-    EditCategoriaComponent
-
-
+    EditCategoriaComponent,
+    ListCompraDetalleComponent
   ],
   imports: [
     BrowserModule,

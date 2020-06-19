@@ -6,6 +6,8 @@ import {LoginComponent} from './components/login/login.component';
 import {ErrorComponent} from './components/error/error.component';
 // user
 import {RegisterComponent} from './components/register/register.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { EditPerfilComponent } from './components/edit-perfil/edit-perfil.component';
 // almacen
 import { NewAlmacenComponent } from './components/new-almacen/new-almacen.component';
 import { ListAlmacenComponent } from './components/list-almacen/list-almacen.component';
@@ -26,11 +28,10 @@ import { EditProveedorComponent } from './components/edit-proveedor/edit-proveed
 import { NewCategoriaComponent } from './components/new-categoria/new-categoria.component';
 import { ListCategoriaComponent } from './components/list-categoria/list-categoria.component';
 import { EditCategoriaComponent } from './components/edit-categoria/edit-categoria.component';
-
-import { PerfilComponent } from './components/perfil/perfil.component';
-import { EditPerfilComponent } from './components/edit-perfil/edit-perfil.component';
+// compra
 import { NewCompraComponent } from './components/new-compra/new-compra.component';
 import { ListCompraComponent } from './components/list-compra/list-compra.component';
+import { ListCompraDetalleComponent } from './components/list-compra-detalle/list-compra-detalle.component';
 
 
 
@@ -42,7 +43,7 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path:'logout/:sure',component:LoginComponent},
   {path:'perfil', component: PerfilComponent},
-  {path:'edit-perfil',component: EditPerfilComponent },
+  {path:'edit-perfil/:id',component: EditPerfilComponent },
   // almacen
   {path: 'new-almacen', component: NewAlmacenComponent},
   {path: 'list-almacen', component: ListAlmacenComponent},
@@ -68,6 +69,8 @@ const appRoutes: Routes = [
   // compra
   {path: 'new-compra',component:NewCompraComponent},
   {path: 'list-compra', component: ListCompraComponent},
+  {path: 'list-compra-detalle/:id', component: ListCompraDetalleComponent},
+  // detalle
   // error
   { path: '**', component: ErrorComponent }
 ];

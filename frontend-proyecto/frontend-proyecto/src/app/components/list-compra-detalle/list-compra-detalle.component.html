@@ -1,0 +1,52 @@
+<div class="loading" *ngIf="!compra">
+    Cargando...
+</div>
+<div *ngIf="compra">
+    <br>
+    <h3>Ver detalles</h3>
+    <hr>
+</div>
+<div *ngIf="compra">
+    <div class="card text-center">
+        <div class="card-header">
+            <img src="assets/img/compra.png" width="220px" alt="">
+        </div>
+        <br>
+        <div class="form-row">
+            <div class="col-3">
+                <h5 class="card-title">compra N° {{compra.id}}</h5>
+            </div>
+            <div class="col-3">
+                <h5 class="card-text">Usuario: {{compra.idUsuario }}</h5>
+            </div>
+            <div class="col-3">
+                <h5 class="card-text">Cliente: {{compra.idCliente }}</h5>
+            </div>
+            <div class="col-3">
+                <h5 class="card-text">Total: {{compra.total }}</h5>
+            </div>
+        </div>
+        <div class="card-footer text-muted mt-2 text-center">
+            <h5 class="card-title">Detalles de la compra</h5>
+            <table class="table table-bordered table-striped" *ngIf="detalles">
+                <thead class="table-success">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Poducto</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let detalle of detalles">
+                    <tr *ngIf="detalle.idCompra == compra.id">
+                        <td>{{detalle.id}}</td>
+                        <td>{{detalle.idProducto}}</td>
+                        <td>{{detalle.cantidad}}</td>
+                        <td>{{detalle.precioDetalle}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
