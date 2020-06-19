@@ -128,7 +128,7 @@ export class NewCompraComponent implements OnInit {
       response=>{
         if(response.status=="success"){
           this.statusDetalle= response.status;
-          form.reset();
+          //form.reset();
         }else{
           this.statusDetalle="error";
         }
