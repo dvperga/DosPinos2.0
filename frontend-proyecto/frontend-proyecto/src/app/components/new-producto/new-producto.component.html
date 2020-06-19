@@ -3,7 +3,10 @@
     <div class="col-md-12 mt-3">
         <h1 style="text-align:center;">Ingresar Nuevo Producto</h1>
         <h5 style="text-align:center;">Ingrese los datos del nuevo producto.</h5>
-        <br/>
+
+        <div class="alert alert-success" *ngIf="status=='success'">
+            El registro se almaceno satisfactoriamente
+        </div><br/>
         <form class="col-md-6 mr-auto ml-auto" #productoNewForm="ngForm" (ngSubmit)="onSubmit(productoNewForm)">
             <div class="form-group">
                 <label>Nombre</label>

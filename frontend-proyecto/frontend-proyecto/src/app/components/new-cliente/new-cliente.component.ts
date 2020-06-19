@@ -4,6 +4,7 @@ import { ClienteService } from '../../services/cliente.service';
 import { Cliente } from '../../models/cliente';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-new-cliente',
   templateUrl: './new-cliente.component.html',
@@ -33,11 +34,16 @@ export class NewClienteComponent implements OnInit {
     console.log(this.token);
     this._clienteService.create(this.cliente,this.token).subscribe(
       response=>{
-        this.status='success';
-        this._router.navigate(['/inicio']);
+        if (response.status == 'success'){
+        console.log(response);
+        this.status = response.status;
+        form.reset();
+      }else{
+        this.status = "Error";
+      }
       },
       error=>{
-        this.status='error';
+        this.status= error;
       }
     );
   }

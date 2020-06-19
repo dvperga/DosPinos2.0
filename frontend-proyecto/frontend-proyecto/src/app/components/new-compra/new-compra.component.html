@@ -2,34 +2,35 @@
 <div class="loading" *ngIf="!clientes && !detalles">
     Cargando...
 </div>
-<div class="card card text-center" *ngIf="clientes && !creado">
-    <div class="col-md-12 mt-2">
-        <div class="card-body">
-            <h1 style="text-align:center;">Realizar una compra</h1>
-            <br/>
-            <h5 style="text-align:center;">Seleccione el nombre del cliente que va realizar comprar.</h5>
-            <br/>
-            <form class="text-center" #compraNewForm="ngForm" (ngSubmit)="onSubmit(compraNewForm)">
-                <div class="form-group col-md-12">
-                    <label>Cliente</label>
-                    <div class="form-group">
-                        <select name="idCliente" #idCliente="ngModel" [(ngModel)]="compra.idCliente" class="form-control">
+<div class="card" *ngIf="clientes && !creado">
+    <h1 style="text-align:center;">Realizar una compra</h1>
+    <br/>
+    <h5 style="text-align:center;">Seleccione el nombre del cliente que va realizar comprar.</h5>
+    <br/>
+    <form class="text-center" style="text-align:center;" #compraNewForm="ngForm" (ngSubmit)="onSubmit(compraNewForm)">
+        <div class="row">
+            <div class="col">
+                <h5>Cliente:</h5>
+            </div>
+            <div class="col">
+                <select name="idCliente" #idCliente="ngModel" [(ngModel)]="compra.idCliente" class="form-control">
                 <option *ngFor="let cliente of clientes" value="{{cliente.id}}" >
                 {{cliente.nombre}}
                 </option>
               </select>
-                    </div>
-                </div>
-
-                <input type="submit" value="Iniciar" class="btn btn-success">
-            </form>
+            </div>
+            <div class="col">
+                <input type="submit" value="Ingresar" class="btn btn-success">
+            </div>
         </div>
-    </div>
+    </form>
+    <br>
 </div>
+
 <div *ngIf="creado">
     <div class="col-md-12 mt-3">
-        <div class="card-body">
-            <h1 style="text-align:center;">Realizando compra N° {{IdentityCompra}}</h1>
+        <div class="card-body" style="text-align:center;">
+            <h1>Realizando compra N° {{IdentityCompra}}</h1>
             <br/>
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Agregar detalle</button>
         </div>
@@ -51,6 +52,7 @@
                     <th scope="col">Funcion</th>
                 </tr>
             </thead>
+
             <tbody *ngFor="let detalle of detalles">
                 <tr *ngIf="detalle.idCompra == IdentityCompra">
                     <td>{{detalle.id}}</td>

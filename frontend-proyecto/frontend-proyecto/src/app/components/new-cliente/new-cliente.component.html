@@ -3,6 +3,9 @@
     <div class="col-md-12 mt-3">
         <h1 style="text-align:center;">Ingresar Nuevo Cliente</h1>
         <h5 style="text-align:center;">Ingrese los datos del nuevo cliente.</h5>
+        <div class="alert alert-success" *ngIf="status=='success'">
+            El registro se almaceno satisfactoriamente
+        </div>
         <br/>
         <form class="col-md-6 mr-auto ml-auto" #clienteNewForm="ngForm" (ngSubmit)="onSubmit(clienteNewForm)">
             <div class="form-group">

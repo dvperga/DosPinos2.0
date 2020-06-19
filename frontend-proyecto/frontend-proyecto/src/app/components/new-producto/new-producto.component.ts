@@ -139,7 +139,7 @@ export class NewProductoComponent implements OnInit {
         }
       },
       error=>{
-        this.status="error";
+        this.status=error;
         console.log(error);
       }
     );

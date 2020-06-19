@@ -3,6 +3,10 @@
     <div class="col-md-12 mt-3">
         <h1 style="text-align:center;">Ingresar Nueva Categoria</h1>
         <h5 style="text-align:center;">Ingrese los datos de la nueva categoria.</h5>
+
+        <div class="alert alert-success" *ngIf="status=='success'">
+            El registro se almaceno satisfactoriamente
+        </div>
         <br/>
         <form class="col-md-6 mr-auto ml-auto" #newCategoriaForm="ngForm" (ngSubmit)="onSubmit(newCategoriaForm)">
             <div class="form-group">

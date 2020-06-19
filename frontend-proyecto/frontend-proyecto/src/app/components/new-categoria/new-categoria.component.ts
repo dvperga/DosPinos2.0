@@ -34,11 +34,16 @@ export class NewCategoriaComponent implements OnInit {
     console.log(this.token);
     this._categoriaService.create(this.categoria,this.token).subscribe(
       response=>{
-        this.status='success';
-        this._router.navigate(['/inicio']);
+        if (response.status == 'success'){
+        console.log(response);
+        this.status = response.status;
+        form.reset();
+      }else{
+        this.status = "Error";
+      }
       },
       error=>{
-        this.status='error';
+        this.status=error;
       }
     );
   }

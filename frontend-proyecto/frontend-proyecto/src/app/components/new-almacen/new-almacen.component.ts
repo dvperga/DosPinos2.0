@@ -32,11 +32,16 @@ export class NewAlmacenComponent implements OnInit {
     console.log(this.token);
     this._almacenService.create(this.almacen,this.token).subscribe(
       response=>{
-        this.status='success';
-        this._router.navigate(['/inicio']);
+        if (response.status == 'success'){
+          console.log(response);
+          this.status = response.status;
+          form.reset();
+        }else{
+          this.status = "Error";
+        }
       },
       error=>{
-        this.status='error';
+        this.status=error;
       }
     );
   }

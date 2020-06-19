@@ -127,17 +127,18 @@ export class NewCompraComponent implements OnInit {
     this._detalleService.create(this.detalle,this.token).subscribe(
       response=>{
         if(response.status=="success"){
-          this.statusDetalle="success";
+          this.statusDetalle= response.status;
+          form.reset();
         }else{
           this.statusDetalle="error";
         }
       },
       error=>{
-        this.status="error";
+        this.statusDetalle=error;
         console.log(error);
       }
     );
-    //this.statusDetalle=false;
+
   }
 
   delete(id) {
@@ -152,7 +153,7 @@ export class NewCompraComponent implements OnInit {
           }
         },
         error => {
-          this.statusDetalle = "error";
+          this.statusDetalle = error;
           console.log(error);
         }
       );
