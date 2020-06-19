@@ -25,7 +25,7 @@ export class NewCategoriaComponent implements OnInit {
   ) {
     this.identity=this._userService.getIdentity();
     this.token=this._userService.getToken();
-    this.categoria=new Categoria(1,1,'','');
+    this.categoria=new Categoria(1,null,'','');
   }
 
   ngOnInit(): void {

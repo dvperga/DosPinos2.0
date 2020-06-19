@@ -24,7 +24,7 @@ export class NewAlmacenComponent implements OnInit {
   ) {
     this.identity=this._userService.getIdentity();
     this.token=this._userService.getToken();
-    this.almacen=new Almacen(1,'','','',1,null);
+    this.almacen=new Almacen(1,'','','',null,null);
   }
   ngOnInit(): void {
   }

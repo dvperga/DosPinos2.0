@@ -5,7 +5,7 @@ export class Producto{
       public precio: number,
       public existenciaActual: number,
       public maximo: number,
-      public minimo: string,
+      public minimo: number,
       public idCategoria:number,
       public idAlmacen: number,
       public idProveedor: number,

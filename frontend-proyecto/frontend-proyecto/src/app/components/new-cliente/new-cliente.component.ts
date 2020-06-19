@@ -25,7 +25,7 @@ export class NewClienteComponent implements OnInit {
   ) {
     this.identity=this._userService.getIdentity();
     this.token=this._userService.getToken();
-    this.cliente=new Cliente(1,1,'','','');
+    this.cliente=new Cliente(1,null,'','','');
   }
   ngOnInit(): void {
   }

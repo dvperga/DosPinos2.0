@@ -25,7 +25,7 @@ export class NewProveedorComponent implements OnInit {
   ) {
     this.identity=this._userService.getIdentity();
     this.token=this._userService.getToken();
-    this.proveedor=new Proveedor(1,1,'','','','',1,'');
+    this.proveedor=new Proveedor(1,null,'','','','',null,'');
   }
 
   ngOnInit(): void {
