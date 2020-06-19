@@ -5,11 +5,15 @@
     <br>
     <h3>Listado de nuestros almacenes</h3>
     <hr>
+    <br>
 </div>
 <div class="row row-cols-1 row-cols-md-3" *ngIf="clientes">
     <article *ngFor="let cliente of clientes">
         <div class="col mb-4">
             <div class="card border-success">
+                <div class="card-header text-center">
+                    <img src="assets/img/clientes.png" width="150px" alt="">
+                </div>
                 <div class="card-body">
                     <h5 class="card-title text-center">{{cliente.nombre}}</h5>
                     <hr class="border-success">
