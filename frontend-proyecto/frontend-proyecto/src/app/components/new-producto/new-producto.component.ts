@@ -124,7 +124,6 @@ export class NewProductoComponent implements OnInit {
   imageUpload(datos){
     let data = JSON.parse(datos.response);
     this.producto.imagen=data.imagen;
-    console.log(this.producto.imagen);
   }
 
   onSubmit(form){
